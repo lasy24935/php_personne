@@ -1,0 +1,25 @@
+body,html
+{
+   padding: 0;
+   margin: 0;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact
+{
+
+box-shadow: 5px 5px 7px rgb(175, 140, 146);
+}
+
+.login, .registre
+{
+   box-shadow: 5px 5px 7px rgb(175, 140, 146);
+   text-align: center;
+
+}
+
+.title, label
+{
+    font-weight: bold;
+    font-style: inherit;
+}
