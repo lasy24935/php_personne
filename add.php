@@ -91,7 +91,7 @@
 									
 								//insert data to database		
 								$sql = "INSERT INTO personne(prenom, nom, age, sexe) VALUES(:prenom, :nom, :age, :sexe)";
-								$query = $dbConn->prepare($sql);
+								$query = $connect->prepare($sql);
 										
 								
 								$query->bindparam(':prenom', $prenom);

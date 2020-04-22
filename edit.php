@@ -31,7 +31,7 @@ if(isset($_POST['update']))
 	} else {	
 		//updating the table
 		$sql = "UPDATE personne SET prenom=:prenom, nom=:nom, age=:age, sexe=:sexe WHERE id=:id";
-		$query = $dbConn->prepare($sql);
+		$query = $connect->prepare($sql);
 				
 		$query->bindparam(':id', $id);
 		$query->bindparam(':prenom', $prenom);
@@ -54,7 +54,7 @@ $id = $_GET['id'];
 
 //selecting data associated with this particular id
 $sql = "SELECT * FROM personne WHERE id=:id";
-$query = $dbConn->prepare($sql);
+$query = $connect->prepare($sql);
 $query->execute(array(':id' => $id));
 
 while($row = $query->fetch(PDO::FETCH_ASSOC))

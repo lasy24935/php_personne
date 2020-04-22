@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 
 <?php
-if(!isset($_SESSION['valid'])) {
+if(!isset($_SESSION['profil'])) {
 	header('Location: login.php');
 }
 ?>
@@ -12,7 +12,7 @@ if(!isset($_SESSION['valid'])) {
 include_once("config.php");
 
 //fetching data in descending order (lastest entry first)
-$result = $mysqli->query("SELECT * FROM personne ORDER BY id DESC");
+$result = $mysqli->query("SELECT * FROM users ORDER BY id DESC");
 ?>
 
 
@@ -46,19 +46,17 @@ $result = $mysqli->query("SELECT * FROM personne ORDER BY id DESC");
                                             <tr>
                                             <th scope="col">Prenom</th>
                                             <th scope="col">Nom</th>
-                                            <th scope="col">Age</th>
-                                            <th scope="col">Sexe</th>
+                                            <th scope="col">Login</th>
                                             <th scope="col">Operation</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         	<?php 	
-                               while($row = mysqli_fetch_array($result)) { 	
+                            while($row = $result->fetch(PDO::FETCH_ASSOC)) { 	
                                     echo "<tr>";
                                     echo "<td>".$row['prenom']."</td>";
                                     echo "<td>".$row['nom']."</td>";
-                                    echo "<td>".$row['age']."</td>";
-                                    echo "<td>".$row['sexe']."</td>";
+                                    echo "<td>".$row['login']."</td>";
                                 
                                     echo "<td><a href=\"edit.php?id=$row[id]\">Edit</a> | <a href=\"delete.php?id=$row[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
                                 }

@@ -15,24 +15,25 @@ if(isset($_POST['connecter'])) {
 		echo "<br/>";
 		echo "<a href='login.php'>Go back</a>";
 	} else {
-		$sql = "SELECT * FROM users WHERE login='$user' AND password=md5('$pass')"
-					or die("Could not execute the select query.");
-		
-		$row = mysqli_fetch_assoc($result);
+
+
+  $sql = $connect->query("SELECT * FROM users WHERE login='$user' AND password='$pass'");
+
+		$row = $sql->fetchAll();
 		
 		if(is_array($row) && !empty($row)) {
 			$validuser = $row['login'];
-			$_SESSION['valid'] = $validuser;
+			$_SESSION['profil'] = $validuser;
 			$_SESSION['prenom'] = $row['prenom'];
 			$_SESSION['id'] = $row['id'];
 		} else {
 			echo "Invalid login or password.";
 			echo "<br/>";
-			echo "<a href='login.php'>Go back</a>";
+			echo "<a href='login.php'>Retour</a>";
 		}
 
-		if(isset($_SESSION['valid'])) {
-			header('Location: index.php');			
+		if(isset($_SESSION['profil'])) {
+			header('Location: personne.php');			
 		}
 	}
 }
@@ -58,8 +59,9 @@ if(isset($_POST['connecter'])) {
                      <div class="row">
                         
                              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 table-responsive table-hover">
-									<form action="login.php" method="post">
-										
+                       
+					   <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+
 									<div class="form-group">
 										<label for="login">Login</label>
 										<input type="email" class="form-control" id="login" placeholder="Votre email" name="login">
@@ -70,6 +72,7 @@ if(isset($_POST['connecter'])) {
 									</div>
 									
 									<button type="submit" class="btn btn-success btn-connecter" name="connecter" id="connecter">Connecter </button>
+									<a href="registre.php" class="btn btn-large btn-primary" style="float: right;"><i class="glyphicon glyphicon-backward"></i> &nbsp; Inscrire</a>
 									</form>
 
                              </div>

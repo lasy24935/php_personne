@@ -7,7 +7,7 @@ $id = $_GET['id'];
 
 //deleting the row from table
 $sql = "DELETE FROM personne WHERE id=:id";
-$query = $dbConn->prepare($sql);
+$query = $connect->prepare($sql);
 $query->execute(array(':id' => $id));
 
 

@@ -4,17 +4,40 @@ include("config.php");
 if(isset($_POST['inscrire'])) {
 	$prenom = $_POST['prenom'];
 	$nom = $_POST['nom'];
-	$user = $_POST['login'];
-	$pass = $_POST['password'];
+	$login = $_POST['login'];
+	$password = $_POST['password'];
 
-	if($user == "" || $pass == "" || $prenom == "" || $nom == "") {
-		echo "All fields should be filled. Either one or many fields are empty.";
-		echo "<br/>";
-		echo "<a href='register.php'>Go back</a>";
-	} else {
-		mysqli_query($mysqli, "INSERT INTO users(prenom, nom, login, password) VALUES('$prenom', '$nom', '$user', md5('$pass'))")
-			or die("Could not execute the insert query.");
-			
+							if(empty($prenom) || empty($nom) || empty($login) || empty($password)) {
+										
+								if(empty($prenom)) {
+									echo "<font color='red'>Prenom field is empty.</font><br/>";
+								}
+								if(empty($nom)) {
+									echo "<font color='red'>Nom field is empty.</font><br/>";
+								}
+								
+								if(empty($login)) {
+									echo "<font color='red'>login field is empty.</font><br/>";
+								}
+								
+								if(empty($password)) {
+									echo "<font color='red'>password field is empty.</font><br/>";
+								}
+								
+								echo "<br/><a href='javascript:self.history.back();'> Retour </a>";
+							} 
+							else { 
+
+		$sql = "INSERT INTO users(prenom, nom, login, password) VALUES(:prenom, :nom, :login, :password)";
+								$query = $connect->prepare($sql);
+										
+								
+								$query->bindparam(':prenom', $prenom);
+								$query->bindparam(':nom', $nom);
+									$query->bindparam(':login', $login);
+								$query->bindparam(':password', $password);
+								$query->execute();
+		
 		echo "Registration successfully";
 		echo "<br/>";
 		echo "<a href='login.php'>Login</a>";
@@ -60,7 +83,7 @@ if(isset($_POST['inscrire'])) {
 									</div>
 									<div class="form-group">
 										<label for="login">Login</label>
-										<input type="nom" class="form-control" id="login" placeholder="Votre nom" name="login">
+										<input type="email" class="form-control" id="login" placeholder="Votre Email" name="login">
 									</div>
 									<div class="form-group">
 										<label for="password">Password </label>
