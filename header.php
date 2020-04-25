@@ -7,16 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css'/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css'/>
-    
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"  />
-  	<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="js/bootstrap.min.js">
-        		<link rel="stylesheet" href="css/style.css">
+ <!-- <link rel="stylesheet" type="text/css" href="assests/bootstrap/css/bootstrap.min.css"> -->
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<!-- datatables css -->
+	<link rel="stylesheet" type="text/css" href="assests/datatables/datatables.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        		<link rel="stylesheet" type="text/css" href="css/style.css">
   
   </head>
   <body>
@@ -43,3 +39,13 @@
        </div>
    </nav>
 
+
+
+<script type="text/javascript" src="assests/jquery/jquery.min.js"></script>
+	<!-- bootstrap js -->
+	<!-- <script type="text/javascript" src="assests/bootstrap/js/bootstrap.min.js"></script> -->
+	<!-- datatables js -->
+	<script type="text/javascript" src="assests/datatables/datatables.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+	<!-- <script src="js/jquery-3.4.1.min.js"></script> -->

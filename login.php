@@ -65,16 +65,16 @@ $sql->execute(array($user, $pass));
 					   <form action="login.php" method="post">
 
 									<div class="form-group">
-										<label for="login">Login</label>
+										<label for="login"> <i class="fas fa-id-card"></i> &nbsp; Login</label>
 										<input type="email" class="form-control" id="login" placeholder="Votre email" name="login">
 									</div>
 									<div class="form-group">
-										<label for="password">Password </label>
+										<label for="password"> <i class="fas fa-user-lock"></i> &nbsp;Password </label>
 										<input type="password" class="form-control" id="password" placeholder="password" name="password">
 									</div>
 									
-									<button type="submit" class="btn btn-success btn-connecter" name="connecter" id="connecter">Connecter </button>
-									<a href="registre.php" class="btn btn-large btn-primary" style="float: right;"><i class="glyphicon glyphicon-backward"></i> &nbsp; Inscrire</a>
+									<button type="submit" class="btn btn-success btn-connecter" name="connecter" id="connecter"> <i class="fas fa-user-friends"></i> &nbsp;Connecter </button>
+									<a href="registre.php" class="btn btn-large btn-primary" style="float: right;"><i class="fas fa-user-plus"></i> &nbsp; Inscrire</a>
 									</form>
 
                              </div>
@@ -87,16 +87,6 @@ $sql->execute(array($user, $pass));
 
     <!--/card body-->
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.js'></script>
- 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery-3.4.1.min.js"></script>
 
   </body>
 </html>
