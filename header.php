@@ -21,7 +21,7 @@
   </head>
   <body>
       
-   <nav class="navbar navbar-expand-md navbar-dark" style="background-color: rgb(175, 140, 146);">
+   <nav class="navbar navbar-expand-md navbar-dark" style="background-color: rgb(94, 109, 66)">
        <a class="navbar-brand" href="index.php">Personne</a>
        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
            aria-expanded="false" aria-label="Toggle navigation"></button>
@@ -33,19 +33,13 @@
                <li class="nav-item">
                    <a class="nav-link" href="add.php">Saisir</a>
                </li>
-               <li class="nav-item dropdown">
-                   <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion</a>
-                   <div class="dropdown-menu" aria-labelledby="dropdownId">
-                       <a class="dropdown-item" href="login.php">Connecter</a>
-                       <a class="dropdown-item" href="registre.php">S'inscrire</a>
-                   </div>
+                <li class="nav-item">
+                   <a class="nav-link" href="login.php">Connecter</a>
                </li>
+              
             
            </ul>
-          <form class="form-inline my-2 my-lg-0">
-               <input class="form-control mr-sm-2" type="text" placeholder="Recherche">
-               <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Recherche</button>
-           </form>
+         
        </div>
    </nav>
 

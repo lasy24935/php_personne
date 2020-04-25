@@ -17,11 +17,13 @@ if(isset($_POST['connecter'])) {
 	} else {
 
 
-  $sql = $connect->query("SELECT * FROM users WHERE login='$user' AND password='$pass'");
+  $sql = $connect->prepapre("SELECT login,password FROM users WHERE login='$user' AND password='$pass'");
+$sql->execute(array($user, $pass));
+	
+    $sql->setFetchMode(PDO::FETCH_ASSOC);
 
-		$row = $sql->fetchAll();
 		
-		if(is_array($row) && !empty($row)) {
+		if ($row = $sql->fetch())   {
 			$validuser = $row['login'];
 			$_SESSION['profil'] = $validuser;
 			$_SESSION['prenom'] = $row['prenom'];
@@ -60,7 +62,7 @@ if(isset($_POST['connecter'])) {
                         
                              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 table-responsive table-hover">
                        
-					   <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+					   <form action="login.php" method="post">
 
 									<div class="form-group">
 										<label for="login">Login</label>

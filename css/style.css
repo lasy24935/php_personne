@@ -8,12 +8,12 @@ body,html
 .contact
 {
 
-box-shadow: 5px 5px 7px rgb(175, 140, 146);
+box-shadow: 5px 5px 7px rgb(94, 109, 66);
 }
 
 .login, .registre
 {
-   box-shadow: 5px 5px 7px rgb(175, 140, 146);
+   box-shadow: 5px 5px 7px rgb(94, 109, 66);
    text-align: center;
 
 }

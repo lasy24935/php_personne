@@ -3,7 +3,7 @@
 include_once("config.php");
 
 //fetching data in descending order (lastest entry first)
-$sql = $connect->query("SELECT * FROM personne ORDER BY id DESC");
+$result = $connect->query("SELECT * FROM personne ORDER BY id DESC");
 ?>
 
 
@@ -19,7 +19,8 @@ $sql = $connect->query("SELECT * FROM personne ORDER BY id DESC");
                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 offset-1">
                                     <div class="card contact">
                                       <div class="card-body">
-                                               <p>
+                                        <h4 class="card-title ">LISTES DES CONTACTS</h4>
+                                      <p>
 
                                               <?php
                                               if (isset($_COOKIE['cpt']))
@@ -63,7 +64,7 @@ $sql = $connect->query("SELECT * FROM personne ORDER BY id DESC");
                                         </thead>
                                         <tbody>
                                         	<?php 	
-                                while($row = $sql->fetch(PDO::FETCH_ASSOC)) { 	
+                                while($row = $result->fetch(PDO::FETCH_ASSOC)) { 	
                                                         echo "<tr>";
                                     echo "<td>".$row['prenom']."</td>";
                                     echo "<td>".$row['nom']."</td>";
