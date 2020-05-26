@@ -3,7 +3,7 @@
 include_once("config.php");
 
 //fetching data in descending order (lastest entry first)
-$result = $connect->query("SELECT * FROM personne ORDER BY id DESC");
+$result = $connect->query("SELECT * FROM contact ORDER BY id DESC");
 ?>
 
 

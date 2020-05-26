@@ -90,7 +90,7 @@
 								// if all the fields are filled (not empty) 
 									
 								//insert data to database		
-								$sql = "INSERT INTO personne(prenom, nom, age, sexe) VALUES(:prenom, :nom, :age, :sexe)";
+								$sql = "INSERT INTO contact(prenom, nom, age, sexe) VALUES(:prenom, :nom, :age, :sexe)";
 								$query = $connect->prepare($sql);
 										
 								

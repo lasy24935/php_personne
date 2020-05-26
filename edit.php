@@ -30,7 +30,7 @@ if(isset($_POST['update']))
 		}		
 	} else {	
 		//updating the table
-		$sql = "UPDATE personne SET prenom=:prenom, nom=:nom, age=:age, sexe=:sexe WHERE id=:id";
+		$sql = "UPDATE contact SET prenom=:prenom, nom=:nom, age=:age, sexe=:sexe WHERE id=:id";
 		$query = $connect->prepare($sql);
 				
 		$query->bindparam(':id', $id);
@@ -53,7 +53,7 @@ if(isset($_POST['update']))
 $id = $_GET['id'];
 
 //selecting data associated with this particular id
-$sql = "SELECT * FROM personne WHERE id=:id";
+$sql = "SELECT * FROM contact WHERE id=:id";
 $query = $connect->prepare($sql);
 $query->execute(array(':id' => $id));
 
